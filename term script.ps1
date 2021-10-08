@@ -27,7 +27,7 @@ $currentMonth = Get-Date -Format "MM"
 $currentDayOfMonth = Get-Date -Format "dd"
 
 
-Write-Host "Welcome to Stout's Termination Script. Please wait a moment!"
+Write-Host "Welcome to Jax's Termination Script. Please wait a moment!"
 Start-Transcript "\\redacted\$transcriptDate.txt" -NoClobber
 Import-Module ActiveDirectory
 Import-Module -Name AzureAD
@@ -56,7 +56,7 @@ Write-Output "The following will be applied as the random password for this acco
 $terminatedUser = Read-Host 'Enter the SamAccountName of the user you are terminating (like redacted)'
 
 #used to block M365 sign in
-$terminatedUserM365Name = "$terminatedUser"+"@stout.com"
+$terminatedUserM365Name = "$terminatedUser"+"@xx.com"
 
 $confirmation = Read-Host "Did you enter the SamAccountName of the user you are terminating correctly? [y/n]"
 while($confirmation -ne "y")
@@ -221,15 +221,15 @@ pause
 #Email Section
 #Email to Broadgun to Delete PDF Machine License
 #Write-Output "Sending an E-mail message to redacted to disable $terminatuedUser Account""
-#$broadgunSupportEmailAddress = "jgorman@stout.com"
-#Send-MailMessage -To "$broadGunSupportEmailAddress" -From "jgorman@stout.com" -Subject "$Terminateduser - Please delete from Stout's Broadgun License Pool" -Body "Hello, please delete $terminatedUser from Stout's PDF Machine license pool. Thanks!" -SmtpServer redacted
+#$broadgunSupportEmailAddress = "jgorman@xx.com"
+#Send-MailMessage -To "$broadGunSupportEmailAddress" -From "jgorman@xx.com" -Subject "$Terminateduser - Please delete from xx's Broadgun License Pool" -Body "Hello, please delete $terminatedUser from xx's PDF Machine license pool. Thanks!" -SmtpServer redacted
 
 #Email to Peter/Steve to clear app passwords
 $appPasswordClearRecipients = "xx@xx.com", "xx@xx.com"
 $aCMClear = ""
 $sharefileClear = "redacted"
 Write-Output "Sending an e-mail message to clear app passwords to $appPasswordClearRecipients!"
-Send-MailMessage -To $appPasswordClearRecipients -From "xx@xx.com" -Subject "$Terminateduser - Please Clear App Passwords" -Body "Hello, Please clear $terminatedUser's App Passwords. Thanks! -$supportAnalyst" -SmtpServer nc1vmexchangep2.gosrr.com
+Send-MailMessage -To $appPasswordClearRecipients -From "xx@xx.com" -Subject "$Terminateduser - Please Clear App Passwords" -Body "Hello, Please clear $terminatedUser's App Passwords. Thanks! -$supportAnalyst" -SmtpServer xx.xx.com
 if($?)
 {
     Write-Output "Email Sent Successfully!"
@@ -249,7 +249,7 @@ else
     Write-Output "Email NOT Sent Successfully! Please e-mail $acCMClear to delete from ACM!"
 }
 pause
-Send-MailMessage -To $sharefileClear -From "hd@stout.com" -Subject "$Terminateduser - Please Remove from Sharefile" -Body "Hello, Please clear $terminatedUser from Sharefile. Thanks! -$supportAnalyst" -SmtpServer redacted
+Send-MailMessage -To $sharefileClear -From "xx@xx.com" -Subject "$Terminateduser - Please Remove from Sharefile" -Body "Hello, Please clear $terminatedUser from Sharefile. Thanks! -$supportAnalyst" -SmtpServer redacted
 if($?)
 {
     Write-Output "Email Sent Successfully to $sharefileClear!"
