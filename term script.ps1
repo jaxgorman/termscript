@@ -225,11 +225,11 @@ pause
 #Send-MailMessage -To "$broadGunSupportEmailAddress" -From "jgorman@stout.com" -Subject "$Terminateduser - Please delete from Stout's Broadgun License Pool" -Body "Hello, please delete $terminatedUser from Stout's PDF Machine license pool. Thanks!" -SmtpServer redacted
 
 #Email to Peter/Steve to clear app passwords
-$appPasswordClearRecipients = "sjackson@stout.com", "pmarciano@stout.com"
+$appPasswordClearRecipients = "xx@xx.com", "xx@xx.com"
 $aCMClear = ""
 $sharefileClear = "redacted"
 Write-Output "Sending an e-mail message to clear app passwords to $appPasswordClearRecipients!"
-Send-MailMessage -To $appPasswordClearRecipients -From "hd@stout.com" -Subject "$Terminateduser - Please Clear App Passwords" -Body "Hello, Please clear $terminatedUser's App Passwords. Thanks! -$supportAnalyst" -SmtpServer nc1vmexchangep2.gosrr.com
+Send-MailMessage -To $appPasswordClearRecipients -From "xx@xx.com" -Subject "$Terminateduser - Please Clear App Passwords" -Body "Hello, Please clear $terminatedUser's App Passwords. Thanks! -$supportAnalyst" -SmtpServer nc1vmexchangep2.gosrr.com
 if($?)
 {
     Write-Output "Email Sent Successfully!"
@@ -239,7 +239,7 @@ else
     Write-Output "Email NOT Sent Successfully! Please e-mail $apppasswordClearRecipients to clear app passwords!"
 }
 pause
-Send-MailMessage -To $aCMClear -From "hd@stout.com" -Subject "$Terminateduser - Please Remove from ACM" -Body "Hello, Please clear $terminatedUser from ACM. Thanks! -$supportAnalyst" -SmtpServer redacted
+Send-MailMessage -To $aCMClear -From "xx@xx.com" -Subject "$Terminateduser - Please Remove from ACM" -Body "Hello, Please clear $terminatedUser from ACM. Thanks! -$supportAnalyst" -SmtpServer redacted
 if($?)
 {
     Write-Output "Email Sent Successfully to $acCmClear!"
